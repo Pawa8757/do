@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0; 
+}
+
+h1 {
+    color: rgb(228, 48, 48);
+    font-family: cursive, sans-serif;
+    /* Add any other font styles here */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, rgba(186, 9, 142, 0.728));
+}
+
+#container {
+    position: relative;
+    width: 500px;
+    height: 600px;
+    margin: 5px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+#yes, #target {
+    background-color: #13e069;
+    border: none;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+#target {
+    background-color: #f44336; /* Change the color of the "No" button here */
+}
+
+#yes::before, #target::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    border-radius: 10px;
+    transition: opacity 0.3s;
+}
+
+#yes:hover::before, #target:hover::before {
+    opacity: 0.5;
+}
+
+#yes:hover, #target:hover {
+    transform: translateY(-5px);
+}
+
+#yes:active, #target:active {
+    transform: translateY(0);
+}
+
+#yes:active::before, #target:active::before {
+    opacity: 0;
+}
